@@ -19,7 +19,9 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  // create new user service
   async createUser(userData: RegisterDto) {
+    // check if user already exists
     const user = await this.userModel
       .findOne({ email: userData.email })
       .select('email');
@@ -30,14 +32,17 @@ export class AuthService {
       });
     }
 
+    // create new user
     userData.password = hashSync(userData.password, genSaltSync(10));
-
     await new this.userModel(userData).save();
     return { message: 'registered successfully' };
   }
 
+  // login user service
   async loginUser(userData: LoginDto): Promise<{ access_token: string }> {
     const { email, password } = userData;
+
+    // check if user email and password are correct
     const user = await this.userModel.findOne({ email });
     if (!user) {
       throw new UnauthorizedException('This email not exists', {
@@ -51,6 +56,7 @@ export class AuthService {
       });
     }
 
+    // create jwt functionality
     return {
       access_token: this.jwtService.sign(
         {

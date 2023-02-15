@@ -46,6 +46,7 @@ export class AddressService {
 
   // post new address
   async addAddress(addressData: createAddressDto, user: User) {
+    // check if address already exists
     const phone = await this.addressModel
       .findOne({ phone: addressData.phone })
       .select('phone');
@@ -56,6 +57,7 @@ export class AddressService {
       });
     }
 
+    // create address
     addressData.owner = user._id;
     let address = new this.addressModel(addressData);
     await address.save();

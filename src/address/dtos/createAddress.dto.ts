@@ -1,5 +1,6 @@
 import { IsEmpty, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
 import { User } from 'src/auth/auth.schema';
+
 export class createAddressDto {
   @IsNotEmpty()
   name: string;
