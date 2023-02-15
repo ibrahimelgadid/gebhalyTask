@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "9b591c1f-8b98-42d8-84f3-f7bb7453b204",
+		"name": "GebhalyTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "omar",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "omar@gebhalyTask.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "default"
+								},
+								{
+									"key": "password2",
+									"value": "1234",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "ahmed",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "sayed@gebhalyTask.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "ahmed",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "addAddress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWNjZTRhMjIzNTAzZWVhYzdlMWQxZSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ2NTAxNCwiZXhwIjoxNjc3MzI5MDE0fQ.T71NcgLpVndpNc5VDE2i4XgRGBB07PUIlk0gNAM-b4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "ahmed",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "01023651125",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/address/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAdresses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWNjZTRhMjIzNTAzZWVhYzdlMWQxZSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ2NDAwMywiZXhwIjoxNjc3MzI4MDAzfQ.PF92u815enlF77BuTWL8C61ZqWvgk-X5X-0NxpRfFCk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAdressesForUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWNjZTRhMjIzNTAzZWVhYzdlMWQxZSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ2NTAxNCwiZXhwIjoxNjc3MzI5MDE0fQ.T71NcgLpVndpNc5VDE2i4XgRGBB07PUIlk0gNAM-b4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/address/63ecce4a223503eeac7e1d1e/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address",
+								"63ecce4a223503eeac7e1d1e",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdressById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWNjZTRhMjIzNTAzZWVhYzdlMWQxZSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ2NDA5MywiZXhwIjoxNjc3MzI4MDkzfQ.hmaR0ZeFE_nyXRz1vwcjlvTfCdl_dBvMdGbHLHlvpJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/address/63ecceac223503eeac7e1d30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address",
+								"63ecceac223503eeac7e1d30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAdressById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWM5MmZkZGRlYWZmNDM4ZjQxNThhMSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ1MDk0OSwiZXhwIjoxNjc3MzE0OTQ5fQ.NBN4DVLNSLbxFUafBFZgMtU-Cd9shzuRSBz9iMv76PU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/address/63ec9d3baa299ae0e8e4f300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address",
+								"63ec9d3baa299ae0e8e4f300"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAdressById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZWNjZTRhMjIzNTAzZWVhYzdlMWQxZSIsImVtYWlsIjoic2F5ZWRAZ2ViaGFseVRhc2suY29tIiwidXNlcm5hbWUiOiJzYXllZCIsImlhdCI6MTY3NjQ2NDA5MywiZXhwIjoxNjc3MzI4MDkzfQ.hmaR0ZeFE_nyXRz1vwcjlvTfCdl_dBvMdGbHLHlvpJw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "shabaan2",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "01024876339",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/address/63ecceac223503eeac7e1d30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"address",
+								"63ecceac223503eeac7e1d30"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
