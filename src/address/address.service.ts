@@ -65,6 +65,14 @@ export class AddressService {
   // update address by id service
   async updateAddressById(id: string, addressData: updateAddressDto) {
     try {
+      //check if address not exists
+      const address = await this.addressModel.findOne({ _id: id });
+      if (!address) {
+        throw new NotFoundException('This address id not found', {
+          description: 'addressId',
+        });
+      }
+      // update address
       return await this.addressModel.findByIdAndUpdate(id, addressData, {
         new: true,
       });
@@ -78,6 +86,15 @@ export class AddressService {
   // delete address by id service
   async deleteAddressById(id: string) {
     try {
+      //check if address not exists
+      const address = await this.addressModel.findOne({ _id: id });
+      if (!address) {
+        throw new NotFoundException('This address id not found', {
+          description: 'addressId',
+        });
+      }
+
+      // delete address
       return await this.addressModel.deleteOne({ _id: id });
     } catch (error) {
       throw new NotFoundException('This address id not found', {
